@@ -1,0 +1,57 @@
+<div class="card">
+
+    <div class="card-header">
+        <h5>Neue Wohnung, Bauplatz oder Haus hinzufügen</h5>
+    </div>
+
+    <div class="card-body">
+        <form>
+            <div class="row mb-2">
+                <div class="col">
+          
+                 <label class="form-label">ID</label>
+                    <input type="number" [(ngModel)] ="objekte.id" name="ID" class="form-control"/>
+                </div>
+            <div class="col">
+               
+                <label class="form-label">Titel</label>
+                <input type="text" [(ngModel)] ="objekte.titel" name="Titel" class="form-control"/>
+            </div>
+            </div>
+        
+            <div class="row mb-2">
+                <div class="col">
+            
+                <label class="form-label">Beschreibung</label>
+                
+                <input type="text" [(ngModel)] ="objekte.beschreibung" name="Beschreibung" class="form-control"/>
+                
+                </div>
+            </div>
+        
+            <div class="row mb-2">
+                <div class="col">
+               
+                <label class="form-label">Adresse</label>
+                
+                <input type="text" [(ngModel)] ="objekte.adresse" name="Adresse" class="form-control"/>
+                 
+                </div>
+        
+                <div class="col">
+           
+                <label class="form-label">Größe</label>
+                <!--
+                <input type="number" [(ngModel)] ="objekte.groeße" name="Größe" class="form-control"/>
+                -->
+                </div>
+            </div>
+        
+        </form>
+    </div>  
+
+    <div class="card-footer">
+        <button (click)="save()" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
