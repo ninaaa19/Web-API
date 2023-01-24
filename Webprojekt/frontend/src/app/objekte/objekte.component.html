@@ -1,5 +1,5 @@
 
-
+<!--
 <div class="list-group" *ngFor="let Objekt of objekte">
   <a href="#" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
@@ -11,22 +11,24 @@
     <small>Quadratmeterzahl: </small>
   </a>
 </div>
+-->
 
-<!--
-<div class="list-group" *ngFor="let Objekt of objekte"></div>
+<div class="list-group" *ngFor="let Objekt of objekte">
 <div class="card mb-5" style="max-width: 1500px; height: 300px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
+      <img src=Haus1 class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-
         
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <p class="card-text">{{Objekt.titel}}</p>
+        <p class="card-text"><small class="text-muted">{{Objekt.beschreibung}}</small></p>
+        <md-button routerLink="/edit/{{Objekt.titel}}"class="md-raised md-cornered">Angebot ansehen ...</md-button>
+        <br>
+        <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn">x</button>
+
       </div>
     </div>
   </div>
 </div>
--->
