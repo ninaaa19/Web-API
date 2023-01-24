@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Objekte';
-  Haus1:string = 'assets/images/Haus1.jpg';
-  Logo:string = 'assets/images/Logo.jpg';
+  //Logo:string = 'assets/images/Logo.jpg';
 }
