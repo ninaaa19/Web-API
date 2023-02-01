@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  constructor(private http: HttpClient) { 
+
+  }
+
   title = 'Objekte';
 
   Logo:string = 'assets/images/Logo.jpg';
   
   ngOnInit(): void {
- 
+    //this.http.get('http://localhost:8080/route', body as {}).subscribe((result: any) => {
+      //return result;
+    //})
   }
 }

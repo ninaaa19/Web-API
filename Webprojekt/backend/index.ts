@@ -14,6 +14,7 @@ router.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:
 const lib = require('./library');
 
 const objekte = [];
+/*
 
 const logger = (req, res, next) => {
     console.log(`Received Request ${new Date(Date.now()).toLocaleString('de-DE')}`);
@@ -22,8 +23,8 @@ const logger = (req, res, next) => {
     console.log('URL PARAMETER', req.params);
     next();
 }
-
 app.use(logger);
+*/
 
 /*
 app.get('/objekt', (req, res) => {
