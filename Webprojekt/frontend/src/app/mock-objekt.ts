@@ -7,6 +7,7 @@ export const Objekte: Objekt[] = [
     beschreibung: "Beispieltext für eine Wohnung",
     adresse: "Musterstraße",
     groeße: 50,
+    
     },
 
     {
