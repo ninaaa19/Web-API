@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { AppRouter } from './App.router';
 import { resolve } from 'path';
+import connection from './db';
 
 
 const app = express();
@@ -14,6 +15,16 @@ router.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:
 const lib = require('./library');
 
 const objekte = [];
+
+//Abruf Datenbank
+app.get('/', (req, res) => {
+    connection.query('SELECT * FROM table_name', (error, results, fields) => {
+      if (error) throw error;
+      res.send(results);
+    });
+  });
+
+
 /*
 
 const logger = (req, res, next) => {
