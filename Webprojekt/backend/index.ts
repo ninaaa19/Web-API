@@ -16,6 +16,7 @@ const lib = require('./library');
 
 const objekte = [];
 
+//Abruf Datenbank
 app.get('/', (req, res) => {
     connection.query('SELECT * FROM table_name', (error, results, fields) => {
       if (error) throw error;

@@ -11,7 +11,8 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
         }
     }
 
-    /*static async test(req: express.Request, res: express.Response) {
+    /*Von Felix:
+        static async test(req: express.Request, res: express.Response) {
 
         return res.status(200).end(JSON.stringify(await AppController.test()))
 
