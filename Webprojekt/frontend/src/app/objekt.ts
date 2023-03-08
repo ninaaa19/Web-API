@@ -1,5 +1,5 @@
 export interface Objekt{
-    id: number,
+    id?: number,
     titel: string,
     beschreibung: string,
     adresse: string,

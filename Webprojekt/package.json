@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts",
-    "start:dev": "npm run lint && nodemon index.ts"
+    "start:dev": "npm run lint && nodemon index.ts",
+    "start:restapi": "json-server --watch backend/daten-backend/db-daten/db.json"
   },
   "author": "",
   "license": "ISC",

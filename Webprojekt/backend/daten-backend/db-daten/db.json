@@ -1,100 +1,102 @@
 {
-    "users": [
+    "objekte": [
       {
         "id": 1,
-        "firstname": "Mackenzie",
-        "lastname": "Hodges",
-        "age": 31
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 2,
-        "firstname": "Aaliyah",
-        "lastname": "Hailey",
-        "age": 22
+        "titel": "Haus mit Garten",
+        "beschreibung": "Beispieltext für ein Haus",
+        "adresse": "Musterstraße",
+        "groeße": 600
       },
       {
         "id": 3,
-        "firstname": "Lillian",
-        "lastname": "Goodman",
-        "age": 23
+        "titel": "Bauplatz",
+        "beschreibung": "Beispieltext für ein Bauplatz",
+        "adresse": "Musterstraße",
+        "groeße": 700
       },
       {
         "id": 4,
-        "firstname": "Gabrielle",
-        "lastname": "Warren",
-        "age": 34
+        "titel": "Wohnung mit Stadtblick",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 500
       },
       {
         "id": 5,
-        "firstname": "Layla",
-        "lastname": "Ogden",
-        "age": 35
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 6,
-        "firstname": "Maya",
-        "lastname": "Turner",
-        "age": 66
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 7,
-        "firstname": "Brooklyn",
-        "lastname": "Oldridge",
-        "age": 77
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 8,
-        "firstname": "Brooklyn",
-        "lastname": "Fulton",
-        "age": 88
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 9,
-        "firstname": "Isabella",
-        "lastname": "Gate",
-        "age": 99
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 10,
-        "firstname": "Peyton",
-        "lastname": "Oliver",
-        "age": 10
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 11,
-        "firstname": "Jocelyn",
-        "lastname": "Oldman",
-        "age": 11
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 12,
-        "firstname": "Gianna",
-        "lastname": "Conors",
-        "age": 12
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 13,
-        "firstname": "Destiny",
-        "lastname": "Conors",
-        "age": 13
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       },
       {
         "id": 14,
-        "firstname": "Sophie",
-        "lastname": "Ford",
-        "age": 14
-      },
-      {
-        "id": 15,
-        "firstname": "Serenity",
-        "lastname": "Molligan",
-        "age": 15
-      },
-      {
-        "id": 17,
-        "firstname": "Melanie",
-        "lastname": "Sherlock",
-        "age": 17
+        "titel": "Wohnung",
+        "beschreibung": "Beispieltext für eine Wohnung",
+        "adresse": "Musterstraße",
+        "groeße": 50
       }
     ]
   }
