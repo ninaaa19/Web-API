@@ -11,7 +11,7 @@ export class ObjektService {
 
   constructor(private httpClient:HttpClient) { }
 
-  ObjekteUrl :string = "/api/objekte";
+  ObjekteUrl :string = "/localhost:3000/objekte";
 
   getObjekte() : Observable<Objekt[]>{
     

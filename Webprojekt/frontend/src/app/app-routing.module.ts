@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ObjekteComponent } from './objekte/objekte.component';
 import { CreateObjektComponent } from './create-objekt/create-objekt.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,9 @@ const routes: Routes = [
   },
   {
     path:'', redirectTo:'objekte', pathMatch:'full'
+  },
+  {
+    path:'http://localhost:3000/objekte', component: AppComponent
   }
 ];
 

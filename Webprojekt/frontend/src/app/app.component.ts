@@ -17,9 +17,9 @@ export class AppComponent implements OnInit {
   Logo:string = 'assets/images/Logo.jpg';
   
   ngOnInit(): void {
-    //this.http.get('http://localhost:8080/route', body as {}).subscribe((result: any) => {
-      //return result;
-    //})
+    this.http.get('http://localhost:3000/objekte', /*body as {}*/).subscribe((result: any) => {
+      return result;
+    })
   }
 
 
