@@ -115,14 +115,30 @@ export class AppController {
   }
 
   static async putobjekt(id: number, titel: string, beschreibung: string, adresse: string, groesse: number) {
-    return this.objekte;
+    // Suchen Sie das Objekt mit der entsprechenden id
+    const objektIndex = this.objekte.findIndex((objekt) => objekt.id === id);
+
+    // Wenn das Objekt nicht gefunden wird, werfen Sie einen Fehler
+   if (objektIndex === -1) {
+      throw new Error(`Objekt mit id ${id} nicht gefunden.`);
+    }
+
+    // Ändern Sie die Daten des Objekts
+    this.objekte[objektIndex].titel = titel;
+    this.objekte[objektIndex].beschreibung = beschreibung;
+    this.objekte[objektIndex].adresse = adresse;
+    this.objekte[objektIndex].groesse = groesse;
+
+  return this.objekte;
 
   }
 
   static async deleteobjekt(id: number, titel: string, beschreibung: string, adresse: string, groesse: number) {
-    
-    return this.objekte;
+    const indexToDelete = this.objekte.findIndex(objekt => objekt.id === id);
+    if (indexToDelete === -1) {
+      return console.log('Das Objekt konnte nicht gelöscht werden'); // Wenn das Objekt nicht in der Liste ist, wird false zurückgegeben
+    }
+    this.objekte.splice(indexToDelete, 1); // Entfernt das Objekt an der gefundenen Index-Position aus der Liste
+    return console.log('Das Objekt wurde gelöscht'); // Gibt true zurück, wenn das Objekt erfolgreich entfernt wurde
   }
-
-
 }
