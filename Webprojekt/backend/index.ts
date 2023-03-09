@@ -2,7 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { AppRouter } from './App.router';
 import { resolve } from 'path';
-import connection from './db';
+import  cors from 'cors';
+//import connection from './db';
 
 
 const app = express();
@@ -12,17 +13,23 @@ const port = 3000;
 
 router.use(bodyParser.json({limit: '50mb'}));
 router.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
-const lib = require('./library');
+import { Objekt }  from './library';
 
 const objekte = [];
 
+app.use(cors({
+  origin: 'http://localhost:4200',
+  optionsSuccessStatus: 200,
+  credentials: true
+}));
+
 //Abruf Datenbank
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     connection.query('SELECT * FROM table_name', (error, results, fields) => {
       if (error) throw error;
       res.send(results);
     });
-  });
+  });*/
 
 
 /*
@@ -55,14 +62,14 @@ app.use('/api', router);
 router.use('/app', AppRouter);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World!');
 });
 
 
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });
 
 /*

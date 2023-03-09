@@ -3,6 +3,7 @@ import { AppMiddleware } from './App.middleware';
 
 const router: express.Router = express.Router();
 
+router.get('/', AppMiddleware.test);
 /*
 
 ----------------------------

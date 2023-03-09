@@ -1,12 +1,15 @@
 import express from 'express';
+import { AppController } from './App.controller';
 export class AppMiddleware {
+
+
 
 
 static async test(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end();
+            return res.status(200).end(JSON.stringify(await AppController.test()));
         } catch(err) {
-            console.error('signup err', err);
+            console.error('test err', err);
             return res.status(500).end();
         }
     }
@@ -21,8 +24,8 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
 /*
 kommt wo hin?
 static async test(){
-        return 'test';
-    }
+		return 'test';
+	}
 
 // Error Middleware
 app.use((err, req, res, next) => {
