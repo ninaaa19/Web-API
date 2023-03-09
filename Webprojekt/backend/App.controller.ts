@@ -115,15 +115,15 @@ export class AppController {
   }
 
   static async putobjekt(id: number, titel: string, beschreibung: string, adresse: string, groesse: number) {
-    // Suchen Sie das Objekt mit der entsprechenden id
+    //Objekt mit der entsprechenden id suchen
     const objektIndex = this.objekte.findIndex((objekt) => objekt.id === id);
 
-    // Wenn das Objekt nicht gefunden wird, werfen Sie einen Fehler
+    // Wenn das Objekt nicht gefunden wird, Fehler werfen
    if (objektIndex === -1) {
       throw new Error(`Objekt mit id ${id} nicht gefunden.`);
     }
 
-    // Ändern Sie die Daten des Objekts
+    // Daten des Objekts ändern
     this.objekte[objektIndex].titel = titel;
     this.objekte[objektIndex].beschreibung = beschreibung;
     this.objekte[objektIndex].adresse = adresse;
