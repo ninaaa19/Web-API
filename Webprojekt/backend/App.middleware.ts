@@ -14,28 +14,39 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
         }
     }
 
-    /*Von Felix:
-        static async test(req: express.Request, res: express.Response) {
+    static async objekt(req: express.Request, res: express.Response): Promise<void> {
+        try{
+            return res.status(200).end(JSON.stringify(await AppController.objekt()));
+        } catch(err) {
+            console.error('test err', err);
+            return res.status(500).end();
+        }
+    }
 
-        return res.status(200).end(JSON.stringify(await AppController.test()))
+    static async putobjekt(req: express.Request, res: express.Response): Promise<void> {
+        try{
+            return res.status(200).end(JSON.stringify(await AppController.putobjekt(req.body.id, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse)));
+        } catch(err) {
+            console.error('test err', err);
+            return res.status(500).end();
+        }
+    }
 
-    }*/
-    
-/*
-kommt wo hin?
-static async test(){
-		return 'test';
-	}
+    static async postobjekt(req: express.Request, res: express.Response): Promise<void> {
+        try{
+            return res.status(200).end(JSON.stringify(await AppController.postobjekt(req.body.id, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse)));
+        } catch(err) {
+            console.error('test err', err);
+            return res.status(500).end();
+        }
+    }
 
-// Error Middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong!');
-});
-
-app.listen(port, () => {
-    console.log('Running...');
-});
-*/
-
+    static async deleteobjekt(req: express.Request, res: express.Response): Promise<void> {
+        try{
+            return res.status(200).end(JSON.stringify(await AppController.deleteobjekt()));
+        } catch(err) {
+            console.error('test err', err);
+            return res.status(500).end();
+        }
+    }
 }

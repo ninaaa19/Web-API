@@ -1,11 +1,21 @@
 import express from 'express';
+import { AppController } from './App.controller';
 import { AppMiddleware } from './App.middleware';
 
 const router: express.Router = express.Router();
 
 router.get('/', AppMiddleware.test);
-/*
 
+router.get('/objekte',AppMiddleware.objekt);
+
+router.put('/objekte',AppMiddleware.putobjekt);
+
+router.post('/objekte',AppMiddleware.postobjekt);
+
+router.delete('/objekte',AppMiddleware.deleteobjekt);
+
+
+/*
 ----------------------------
 router.post("/Route",
     AppMiddleware.test

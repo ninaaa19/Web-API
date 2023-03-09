@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import { AppRouter } from './App.router';
 import { resolve } from 'path';
 import  cors from 'cors';
-//import connection from './db';
 
 
 const app = express();
@@ -23,39 +22,6 @@ app.use(cors({
   credentials: true
 }));
 
-//Abruf Datenbank
-/*app.get('/', (req, res) => {
-    connection.query('SELECT * FROM table_name', (error, results, fields) => {
-      if (error) throw error;
-      res.send(results);
-    });
-  });*/
-
-
-/*
-
-const logger = (req, res, next) => {
-    console.log(`Received Request ${new Date(Date.now()).toLocaleString('de-DE')}`);
-    console.log('HTTP METHOD', req.method);
-    console.log('HTTP BODY', req.body);
-    console.log('URL PARAMETER', req.params);
-    next();
-}
-app.use(logger);
-*/
-
-/*
-app.get('/objekt', (req, res) => {
-   if (objekte.length == 0) {
-       resolveNotFound(res, 'No objekts found')
-   }else {
-       res.statusCode = 200;
-       res.json(objekte);
-       res.end();
-   }
-});
-
-*/
 
 app.use('/api', router);
 
@@ -71,26 +37,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-/*
-function getObjektIndex(name) {
-    return objekte.findIndex((objekt) => objekt.name === name);
-}
-
-function getObjekt(name) {
-    return objekte.find((objekt) => objekt.name === name);
-}
-
-function resolveNotFound(res, message) {
-    res.statusCode = 404;
-    res.send(message);
-    res.end();
-    return;
-}
-function resolveBadRequest(res, message) {
-    res.statusCode = 400;
-    res.send(message);
-    res.end();
-    return;
-}
-*/
