@@ -43,7 +43,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
 
     static async deleteobjekt(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.deleteobjekt()));
+            return res.status(200).end(JSON.stringify(await AppController.deleteobjekt(req.body.id, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
