@@ -14,6 +14,9 @@ router.post('/objekte',AppMiddleware.postobjekt);
 
 router.delete('/objekte',AppMiddleware.deleteobjekt);
 
+router.get('/objekte',AppMiddleware.sucheobjekt);
+
+router.get('/objekte',AppMiddleware.filterobjekt);
 
 /*
 ----------------------------
