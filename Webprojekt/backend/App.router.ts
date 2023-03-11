@@ -18,6 +18,11 @@ router.get('/objekte',AppMiddleware.sucheobjekt);
 
 router.get('/objekte',AppMiddleware.filterobjekt);
 
+router.put('/objekte', AppMiddleware.ehrhöheAnzahlI);
+
+router.post('/upload-image',AppMiddleware.uploadImage);
+    
+
 /*
 ----------------------------
 router.post("/Route",

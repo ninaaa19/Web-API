@@ -1,4 +1,7 @@
 import { title } from "process";
+import fs from 'fs';
+import path from 'path';
+import multer from "multer"; 
 
 export class AppController {
   public static objekte = [
@@ -9,7 +12,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Strasse',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 0,
+      'bild': ''
     },
     {
       'id': 2,
@@ -18,7 +22,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für ein Haus',
       'adresse': 'Musterstraße',
       'groesse': 600,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 10,
+      'bild': ''
     },
     {
       'id': 3,
@@ -27,7 +32,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für ein Bauplatz',
       'adresse': 'Musterstraße',
       'groesse': 700,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 3,
+      'bild': ''
     },
     {
       'id': 4,
@@ -36,7 +42,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 500,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 2,
+      'bild': ''
     },
     {
       'id': 5,
@@ -45,7 +52,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 7,
+      'bild': ''
     },
     {
       'id': 6,
@@ -54,7 +62,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 1,
+      'bild': ''
     },
     {
       'id': 7,
@@ -63,7 +72,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 0,
+      'bild': ''
     },
     {
       'id': 8,
@@ -72,7 +82,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 4,
+      'bild': ''
     },
     {
       'id': 9,
@@ -81,7 +92,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 2,
+      'bild': ''
     },
     {
       'id': 10,
@@ -90,7 +102,8 @@ export class AppController {
       'beschreibung': 'Beispieltext für eine Wohnung',
       'adresse': 'Musterstraße',
       'groesse': 50,
-      'anzahlinteressent': 0
+      'anzahlinteressent': 7,
+      'bild': ''
     }
   ];
   
@@ -101,12 +114,22 @@ export class AppController {
   static async objekt() {
     return this.objekte;
   }
-  static async postobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number) {
-    this.objekte.push({id: id, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent } )
+  static async postobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
+    // Finde die höchste existierende ID, indem du die Liste der Objekte durchgehst
+    let highestId = 0;
+    for (const obj of this.objekte) {
+      if (obj.id > highestId) {
+        highestId = obj.id;
+      }
+    }
+    // Erhöhe die höchste ID um eins und verwende sie als ID für das neue Objekt
+    const newId = highestId + 1;
+    // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
+    this.objekte.push({id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } )
     return this.objekte;
   }
 
-  static async putobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number) {
+  static async putobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
     //Objekt mit der entsprechenden id suchen
     const objektIndex = this.objekte.findIndex((objekt) => objekt.id === id);
 
@@ -125,7 +148,7 @@ export class AppController {
 
   }
 
-  static async deleteobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number) {
+  static async deleteobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
     const indexToDelete = this.objekte.findIndex(objekt => objekt.id === id);
     if (indexToDelete === -1) {
       return console.log('Das Objekt konnte nicht gelöscht werden'); // Wenn das Objekt nicht in der Liste ist, wird false zurückgegeben
@@ -157,4 +180,36 @@ export class AppController {
         return []; // oder throw err; um den Fehler weiterzuleiten
     }
 }
+static async ehrhöheAnzahlI(id: number, anzahlinteressent: number) {
+  const index = this.objekte.findIndex(objekt => objekt.id === id);
+  //const index= this.objekte.findIndex(objekt => objekt.anzahlinteressent === anzahlinteressent);
+    this.objekte[index].anzahlinteressent++; // Erhöhe die Anzahl bei diesem Objekt
+  
+    return this.objekte;
+
 }
+static async uploadImage(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number) {
+  // Verzeichnis für hochgeladene Bilder erstellen
+  const UPLOADS_DIR = path.join(__dirname, 'uploads');
+  if (!fs.existsSync(UPLOADS_DIR)) {
+  fs.mkdirSync(UPLOADS_DIR);
+  }
+
+// Funktion zum Speichern des Bildes auf dem Dateisystem
+/*const saveImage = (bild: Express.Multer.File) => {
+  const filename = bild;
+  const filepath = path.join(UPLOADS_DIR, filename);
+  bild.mv(filepath, function(err) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log(`Bild ${filename} erfolgreich hochgeladen`);
+  });*/
+};
+
+
+}
+
+
+
