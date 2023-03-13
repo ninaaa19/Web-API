@@ -1,6 +1,6 @@
 import express from 'express';
 import { AppController } from './App.controller';
-import multer from 'multer';
+//import multer from 'multer';
 export class AppMiddleware {
 
 
@@ -32,6 +32,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
     }
 
     static async postobjekt(req: express.Request, res: express.Response): Promise<void> {
+        console.log('postobjekt');
         try{
             return res.status(200).end(JSON.stringify(await AppController.postobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse, req.body.anzahlinteressent, req.body.bild)));
         } catch(err) {
@@ -77,6 +78,13 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
         }
     }
     static async uploadImage(req: express.Request, res: express.Response): Promise<void> {
+        console.log('uploadImage');
+        try{
+            return res.status(200).end(JSON.stringify(await AppController.uploadImage(req.body.id, req.body.file)));
+        } catch(err) {
+            console.error('test err', err);
+            return res.status(500).end();
+        }
         //Speicherort für hochgeladene Bilder
        /* const storage = multer.diskStorage({
         destination: function (req, file, cb) {

@@ -11,11 +11,11 @@ export class ObjektService {
 
   constructor(private httpClient:HttpClient) { }
 
-  ObjekteUrl :string = "/localhost:3000/objekte";
+  ObjekteUrl :string = "http://localhost:3000/api/app";
 
   getObjekte() : Observable<Objekt[]>{
     
-    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl);
+    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/");
 
     return response;
   }
@@ -34,7 +34,12 @@ export class ObjektService {
   }
   
   addObjekt(objekt : Objekt) : Observable<Objekt> {
-    var response = this.httpClient.post<Objekt>(this.ObjekteUrl, objekt);
+    var response = this.httpClient.post<Objekt>(this.ObjekteUrl +"/objekte", objekt);
+    return response;
+  }
+
+  upload(file: any, id: number) : Observable<any> {
+    var response = this.httpClient.post<any>(this.ObjekteUrl + "/upload-image", {id: id, file: file, fileType: file.type});
     return response;
   }
 

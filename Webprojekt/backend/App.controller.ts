@@ -1,7 +1,7 @@
 import { title } from 'process';
 import fs from 'fs';
 import path from 'path';
-import multer from 'multer'; 
+//import multer from 'multer'; 
 import { post } from 'request';
 
 export class AppController {
@@ -127,7 +127,7 @@ export class AppController {
     const newId = highestId + 1;
     // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
     this.objekte.push({id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } );
-    return this.objekte;
+    return {id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild };
   }
 
   static async putobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
@@ -172,7 +172,7 @@ export class AppController {
         //let posts = await AppController.objekt();
 
      
-            let posts = this.objekte.filter(post => post.adresse === adresse);
+        const posts = this.objekte.filter(post => post.adresse === adresse);
         
 
         return posts;
@@ -188,12 +188,16 @@ static async ehrhöheAnzahlI(id: number, anzahlinteressent: number) {
     return this.objekte[index];
 
 }
-static async uploadImage(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number) {
+static async uploadImage(id: number, file: any) {
   // Verzeichnis für hochgeladene Bilder erstellen
-  const UPLOADS_DIR = path.join(__dirname, 'bilder');
+  const index = this.objekte.findIndex((objekt) => objekt.id === id);
+  console.log('fileType', file.name.split('.')[1]);
+  this.objekte[index].bild = `./bilder/${id}.${file.name.split('.')[1]}`; //'./bilder/' + id + '.' + file.mimetype.split('/')[1];
+  const UPLOADS_DIR = path.join('./', 'bilder');
   if (!fs.existsSync(UPLOADS_DIR)) {
   fs.mkdirSync(UPLOADS_DIR);
   }
+  fs.writeFileSync(path.join(UPLOADS_DIR, `/${id}.${file.name.split('.')[1]}`), file.file.split(',')[1], 'base64');
 
 // Funktion zum Speichern des Bildes auf dem Dateisystem
 /*const saveImage = (bild: Express.Multer.File) => {

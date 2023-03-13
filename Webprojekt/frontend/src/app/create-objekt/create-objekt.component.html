@@ -6,6 +6,8 @@
 
     <div class="card-body">
         <form>
+            <label class="form-label">Bild</label>
+            <input type="file" (change)="onFileChange($event)" [(ngModel)] ="bild" name="Bild" class="form-control"/>
             <div class="row mb-2">
                 <div class="col">
           

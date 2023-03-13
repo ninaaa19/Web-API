@@ -30,6 +30,9 @@ export class CreateObjektComponent implements OnInit {
     groeße: 50,
     }
 
+  bild: any;
+  file: any;
+
   ngOnInit(): void {
     if (this.router.url !='/create'){
       var id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
@@ -41,8 +44,35 @@ export class CreateObjektComponent implements OnInit {
   }
 
   save(): void {
-    this.ObjektService.addObjekt(this.objekte).subscribe();
+    this.ObjektService.addObjekt(this.objekte).subscribe((result) => {
+      if(result.id) {
+        this.upload(result.id);
+      }
+    });
     this.router.navigate(['objekte']);
+  }
+
+  upload(id: number): void {
+    console.log(this.file);
+    this.ObjektService.upload(this.file, id).subscribe();
+  }
+
+  onFileChange(event: any) { //TODO only works with one file
+    console.log("onFileChange", event);
+    this.file = undefined;
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        //console.log("reader.onloadend", reader.result);
+        if(event.target.files[0].type) {
+        this.file = {name: event.target.files[0].name,file: reader.result, fileType: event.target.files[0].type, size: event.target.files[0].size};
+        } else {
+          this.file = {name: event.target.files[0].name,file: reader.result, fileType: "unknown", size: event.target.files[0].size};
+        }
+      };
+    }
   }
 
 }
