@@ -14,11 +14,11 @@ router.post('/objekte',AppMiddleware.postobjekt);
 
 router.delete('/objekte',AppMiddleware.deleteobjekt);
 
-router.get('/objekte',AppMiddleware.sucheobjekt);
+router.get('/objektesuchen',AppMiddleware.sucheobjekt);
 
-router.get('/objekte',AppMiddleware.filterobjekt);
+router.get('/objektefiltern',AppMiddleware.filterobjekt);
 
-router.put('/objekte', AppMiddleware.ehrhöheAnzahlI);
+router.put('/objekteAnzahlerhoehen', AppMiddleware.ehrhöheAnzahlI);
 
 router.post('/upload-image',AppMiddleware.uploadImage);
     

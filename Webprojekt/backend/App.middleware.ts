@@ -1,6 +1,6 @@
 import express from 'express';
 import { AppController } from './App.controller';
-import multer from "multer";
+import multer from 'multer';
 export class AppMiddleware {
 
 
@@ -78,7 +78,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
     }
     static async uploadImage(req: express.Request, res: express.Response): Promise<void> {
         //Speicherort für hochgeladene Bilder
-        const storage = multer.diskStorage({
+       /* const storage = multer.diskStorage({
         destination: function (req, file, cb) {
         cb(null, "public/images");
         },
@@ -86,6 +86,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
         cb(null, Date.now() + "-" + file.originalname);
         },
         });
+        
 
   // Funktion zum Speichern des Bildes
   const saveImage = multer({ storage }).single("image");
@@ -94,6 +95,6 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
-        }
+        }*/
     }
 }

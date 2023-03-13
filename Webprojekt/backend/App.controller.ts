@@ -1,7 +1,8 @@
-import { title } from "process";
+import { title } from 'process';
 import fs from 'fs';
 import path from 'path';
-import multer from "multer"; 
+import multer from 'multer'; 
+import { post } from 'request';
 
 export class AppController {
   public static objekte = [
@@ -125,7 +126,7 @@ export class AppController {
     // Erhöhe die höchste ID um eins und verwende sie als ID für das neue Objekt
     const newId = highestId + 1;
     // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
-    this.objekte.push({id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } )
+    this.objekte.push({id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } );
     return this.objekte;
   }
 
@@ -165,32 +166,31 @@ export class AppController {
   }
 
   static async sucheobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number)  {
-    try {
+   try {
         //let filterTitel = req.query.filterTitel;
-        let suchobjekt = this.objekte.findIndex((objekt) => objekt.adresse == adresse);
-        let posts = await AppController.objekt();
+        //let suchobjekt = this.objekte.findIndex((objekt) => objekt.adresse == adresse);
+        //let posts = await AppController.objekt();
 
-        if (suchobjekt) {
-            posts = posts.filter(post => post.adresse === adresse);
-        }
+     
+            let posts = this.objekte.filter(post => post.adresse === adresse);
+        
 
-        return this.objekte;
+        return posts;
     } catch(err) {
         console.error('test err', err);
         return []; // oder throw err; um den Fehler weiterzuleiten
     }
 }
 static async ehrhöheAnzahlI(id: number, anzahlinteressent: number) {
-  const index = this.objekte.findIndex(objekt => objekt.id === id);
-  //const index= this.objekte.findIndex(objekt => objekt.anzahlinteressent === anzahlinteressent);
-    this.objekte[index].anzahlinteressent++; // Erhöhe die Anzahl bei diesem Objekt
-  
-    return this.objekte;
+  const index = this.objekte.findIndex((objekt) => objekt.id === id);
+  this.objekte[index].anzahlinteressent++; // Erhöhe die Anzahl bei diesem Objekt
+
+    return this.objekte[index];
 
 }
 static async uploadImage(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number) {
   // Verzeichnis für hochgeladene Bilder erstellen
-  const UPLOADS_DIR = path.join(__dirname, 'uploads');
+  const UPLOADS_DIR = path.join(__dirname, 'bilder');
   if (!fs.existsSync(UPLOADS_DIR)) {
   fs.mkdirSync(UPLOADS_DIR);
   }
@@ -206,7 +206,7 @@ static async uploadImage(id: number, typ: string, titel: string, beschreibung: s
     }
     console.log(`Bild ${filename} erfolgreich hochgeladen`);
   });*/
-};
+}
 
 
 }
