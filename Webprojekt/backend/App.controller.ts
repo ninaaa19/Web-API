@@ -9,29 +9,29 @@ export class AppController {
     {
       'id': 1,
       'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Strasse',
+      'titel': 'Wohnung im modern Design',
+      'beschreibung': 'Mobilierte Wohnung mit hochwertigen Designmöbeln, zentrale Lage in der Innenstadt, sehr Preiswert',
+      'adresse': 'Tulpenweg 23, 73443 Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 0,
-      'bild': ''
+      'bild': '1.jpg'
     },
     {
       'id': 2,
       'typ': 'Haus',
       'titel': 'Haus mit Garten',
-      'beschreibung': 'Beispieltext für ein Haus',
+      'beschreibung': 'Einfamilienhaus in ruhiger Lage am Stadtrand mit großem Garten, Garage mit zwei Stellplätzen, Gartenhaus für Gartengeräte, Hochbeet vorhanden',
       'adresse': 'Musterstraße',
       'groesse': 600,
       'anzahlinteressent': 10,
-      'bild': ''
+      'bild': '2.jpg'
     },
     {
       'id': 3,
       'typ': 'Bauplatz',
       'titel': 'Bauplatz',
-      'beschreibung': 'Beispieltext für ein Bauplatz',
-      'adresse': 'Musterstraße',
+      'beschreibung': 'Bauplatz am Stadtrand im Neubaugebiet Hochfeld, Baugebiet mit Blick über die Stadt Heidenheim',
+      'adresse': 'Baulandstraße 4, 73460 Heidenheim',
       'groesse': 700,
       'anzahlinteressent': 3,
       'bild': ''
@@ -40,47 +40,47 @@ export class AppController {
       'id': 4,
       'typ': 'Wohnung',
       'titel': 'Wohnung mit Stadtblick',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Musterstraße',
+      'beschreibung': 'Wohnung mit Ausblick über die Stadt Heidenheim, schlichtes modernes Design, voll möbiliert mit Einbauküche',
+      'adresse': 'Marienstraße 64, 73503 Heidenheim',
       'groesse': 500,
       'anzahlinteressent': 2,
-      'bild': ''
+      'bild': '4.jpg'
     },
     {
       'id': 5,
       'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Musterstraße',
+      'titel': 'Wohnung im Zentrum',
+      'beschreibung': 'Wohnung teilweise möbiliert mit großer Wohnfläche, 3 Zimmer, preiswertes Angebot',
+      'adresse': 'Danzigerstraße 54, 75689 Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 7,
-      'bild': ''
+      'bild': '5.jpg'
     },
     {
       'id': 6,
-      'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Musterstraße',
+      'typ': 'Haus',
+      'titel': 'Doppelhaushälfte in ruhiger Lage',
+      'beschreibung': 'Doppelhaushälfte mit Terasse und Garten, Penthousebalkon, drei Schlafzimmer, zwei Bäder, Wohn- und Essbereich sowie Stellplatz vor dem Haus',
+      'adresse': 'Memelstraße 1, 73450 Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 1,
-      'bild': ''
+      'bild': '6.jpg'
     },
     {
       'id': 7,
-      'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Musterstraße',
+      'typ': 'Haus',
+      'titel': 'Haus im Holzbaustiel',
+      'beschreibung': 'Zentrale Lage zur Innenstadt, großer Garten, zwei Stellplätze vor dem Haus, Wohn- und Essbereich, Gäste WC, vier Schlafzimmer und zwei Bäder',
+      'adresse': 'Wischauerstraße 6, 73589 Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 0,
-      'bild': ''
+      'bild': '7.jpg'
     },
     {
       'id': 8,
-      'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
+      'typ': 'Haus',
+      'titel': 'Einfamilienhaus mit Garage',
+      'beschreibung': 'Ruhige Lage im Stadtrandgebiet, Garage mit einem Stelplatz und zusätzlichem Stellplatz vor dem Haus, kleiner Garten mit Terasse',
       'adresse': 'Musterstraße',
       'groesse': 50,
       'anzahlinteressent': 4,
@@ -88,26 +88,73 @@ export class AppController {
     },
     {
       'id': 9,
-      'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Musterstraße',
+      'typ': 'Bauplatz',
+      'titel': 'Bauplatz im Neubaugebiet',
+      'beschreibung': 'Bauplatz für ein Einfamilienhaus',
+      'adresse': 'Fünfkirchnerstraße 4, 67432 Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 2,
       'bild': ''
     },
     {
       'id': 10,
-      'typ': 'Wohnung',
-      'titel': 'Wohnung',
-      'beschreibung': 'Beispieltext für eine Wohnung',
-      'adresse': 'Musterstraße',
+      'typ': 'Bauplatz',
+      'titel': 'Bauplatz für ein kleines Haus',
+      'beschreibung': 'Bauplatz im Altbaugebiet Wasserstall',
+      'adresse': 'Kurlandstraße 5, 84623 Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 7,
       'bild': ''
     }
   ];
-  
+
+  /*
+  public static objekteextern = [
+    {
+      "createdOn": 1667400075, 
+      "createdBy": "Max Musterman", 
+      "softwareVersion": "2022-1.3.2", 
+      "customer": "Gut & Unbezahlbar GmbH", 
+      "entry": {
+      "type": "house",
+      "address": "Beispielstraße 56",
+      "postal": 89522,
+      "city": "Heidenheim an der Brenz",
+      "size": 246,
+      "comment": "Ruhige Lage, mitten im Zentrum", 
+      "shortHand": "Objekt AB-246"
+      } },
+      {
+        "createdOn": 1667400075, 
+        "createdBy": "Frieda Fröhlich", 
+        "softwareVersion": "3.4.2.6", 
+        "customer": "Studentenbuden AG", 
+        "entry": {
+        "type": "apartment",
+        "address": "Am bekannten Platz 28",
+        "postal": 89522,
+        "city": "Heidenheim an der Brenz",
+        "size": 34,
+        "comment": "Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert", 
+        "shortHand": "Studenten Wohnung am bekannten Platz 28"
+        } },
+        {
+          "createdOn": 1667400075, 
+          "createdBy": "Manfred Stein", 
+          "softwareVersion": null, 
+          "customer": "Stein Bauexperte GmbH", 
+          "entry": {
+          "type": "construction-site", 
+          "address": "Straße am Fluss 1", 
+          "postal": 89522,
+          "city": "Heidenheim an der Brenz", 
+          "size": 600,
+          "comment": "Neues Baugebiet, Platz für Wohnungen oder Einfamilienhäuser, Fertigstellung 2076, Preis 750.000",
+          "shortHand": "Bauplatz BP-2022-01" }
+          }
+    ];
+  */
+
   static async test() {
     return this.objekte;
   }
@@ -115,6 +162,21 @@ export class AppController {
   static async objekt() {
     return this.objekte;
   }
+  /*
+  static async postobjektextern(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string, type: string, comment: string, shortHand: string, address: string, postal: number, city: string, size: number) {
+   
+    typ = type;
+    titel = shortHand;
+    beschreibung = comment;
+    adresse = address, postal, city;
+    groesse = size;
+
+    // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
+    this.objekte.push({id: id, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } );
+    return {id: id, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild };
+  }*/
+
+  
   static async postobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
     // Finde die höchste existierende ID, indem du die Liste der Objekte durchgehst
     let highestId = 0;
@@ -159,57 +221,62 @@ export class AppController {
   }
 
 
-  static async filterobjekt(id: number, typ: string) {
-   
-    
-    return this.objekte;
+  static async filterhaus(id: number, typ: string) {
+    const filteredObjekte = this.objekte.filter(obj => obj.typ === "Haus");
+    return filteredObjekte;
+    }
+
+
+  static async filterwohnung(id: number, typ: string) {
+    const filteredObjekte = this.objekte.filter(obj => obj.typ === "Wohnung");
+    return filteredObjekte;
+  }
+
+  static async filterbauplatz(id: number, typ: string) {
+    const filteredObjekte = this.objekte.filter(obj => obj.typ === "Bauplatz");
+    return filteredObjekte;
   }
 
   static async sucheobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number)  {
    try {
-        //let filterTitel = req.query.filterTitel;
-        //let suchobjekt = this.objekte.findIndex((objekt) => objekt.adresse == adresse);
-        //let posts = await AppController.objekt();
-
-     
         const posts = this.objekte.filter(post => post.adresse === adresse);
-        
-
-        return posts;
+      return posts;
     } catch(err) {
         console.error('test err', err);
         return []; // oder throw err; um den Fehler weiterzuleiten
     }
-}
-static async ehrhöheAnzahlI(id: number, anzahlinteressent: number) {
-  const index = this.objekte.findIndex((objekt) => objekt.id === id);
-  this.objekte[index].anzahlinteressent++; // Erhöhe die Anzahl bei diesem Objekt
+  }
+
+  static async sucheID(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number)  {
+    try {
+         const posts = this.objekte.filter(post => post.id === id);
+       return posts;
+     } catch(err) {
+         console.error('test err', err);
+         return []; // oder throw err; um den Fehler weiterzuleiten
+     }
+   }
+
+
+
+
+  static async ehrhöheAnzahlI(id: number, anzahlinteressent: number) {
+    const index = this.objekte.findIndex((objekt) => objekt.id === id);
+    this.objekte[index].anzahlinteressent++; // Erhöhe die Anzahl bei diesem Objekt
 
     return this.objekte[index];
 
-}
-static async uploadImage(id: number, file: any) {
-  // Verzeichnis für hochgeladene Bilder erstellen
-  const index = this.objekte.findIndex((objekt) => objekt.id === id);
-  console.log('fileType', file.name.split('.')[1]);
-  this.objekte[index].bild = `./bilder/${id}.${file.name.split('.')[1]}`; //'./bilder/' + id + '.' + file.mimetype.split('/')[1];
-  const UPLOADS_DIR = path.join('./', 'bilder');
-  if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR);
   }
-  fs.writeFileSync(path.join(UPLOADS_DIR, `/${id}.${file.name.split('.')[1]}`), file.file.split(',')[1], 'base64');
-
-// Funktion zum Speichern des Bildes auf dem Dateisystem
-/*const saveImage = (bild: Express.Multer.File) => {
-  const filename = bild;
-  const filepath = path.join(UPLOADS_DIR, filename);
-  bild.mv(filepath, function(err) {
-    if (err) {
-      console.error(err);
-      return;
+  static async uploadImage(id: number, file: any) {
+    // Verzeichnis für hochgeladene Bilder erstellen
+    const index = this.objekte.findIndex((objekt) => objekt.id === id);
+    console.log('fileType', file.name.split('.')[1]);
+    this.objekte[index].bild = `./bilder/${id}.${file.name.split('.')[1]}`; //'./bilder/' + id + '.' + file.mimetype.split('/')[1];
+    const UPLOADS_DIR = path.join('./', 'bilder');
+    if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR);
     }
-    console.log(`Bild ${filename} erfolgreich hochgeladen`);
-  });*/
+    fs.writeFileSync(path.join(UPLOADS_DIR, `/${id}.${file.name.split('.')[1]}`), file.file.split(',')[1], 'base64');
 }
 
 

@@ -15,19 +15,19 @@ export class ObjektService {
 
   getObjekte() : Observable<Objekt[]>{
     
-    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/");
+    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/objekte");
 
     return response;
   }
 
   deleteObjekt(objekt: Objekt): Observable<Objekt> {
     
-    var response = this.httpClient.delete<Objekt>(this.ObjekteUrl + "/" + objekt.id);
+    var response = this.httpClient.delete<Objekt>(this.ObjekteUrl + "/objekte" + objekt.id);
     return response;
   }
 
   getObjektById(id : number) : Observable<Objekt> {
-    var response = this.httpClient.get<Objekt>(this.ObjekteUrl + "/" + id);
+    var response = this.httpClient.get<Objekt>(this.ObjekteUrl + "/IDsuchen" + id);
 
     var objektById = Objekte.find(x => x.id == id)!;
     return response;

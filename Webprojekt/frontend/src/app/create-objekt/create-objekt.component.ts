@@ -27,7 +27,7 @@ export class CreateObjektComponent implements OnInit {
     titel: "Wohnung",
     beschreibung: "Beispieltext für eine Wohnung",
     adresse: "Musterstraße",
-    groeße: 50,
+    groesse: 50,
     }
 
   bild: any;

@@ -3,6 +3,5 @@ export interface Objekt{
     titel: string,
     beschreibung: string,
     adresse: string,
-    groeße: number,
-    //bild: ???
+    groesse: number
 }

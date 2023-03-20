@@ -6,7 +6,7 @@ export const Objekte: Objekt[] = [
     titel: "Wohnung",
     beschreibung: "Beispieltext für eine Wohnung",
     adresse: "Musterstraße",
-    groeße: 50,
+    groesse: 50,
     
     },
 
@@ -15,7 +15,7 @@ export const Objekte: Objekt[] = [
     titel: "Haus mit Garten",
     beschreibung: "Beispieltext für ein Haus",
     adresse: "Musterstraße",
-    groeße: 600,
+    groesse: 600,
     },  
 
     {
@@ -23,7 +23,7 @@ export const Objekte: Objekt[] = [
     titel: "Bauplatz",
     beschreibung: "Beispieltext für einen Bauplatz",
     adresse: "Musterstraße",
-    groeße: 700,
+    groesse: 700,
     },
 
     {
@@ -31,7 +31,7 @@ export const Objekte: Objekt[] = [
     titel: "Wohnung mit Stadtblick",
     beschreibung: "Beispieltext für eine Wohnung",
     adresse: "Musterstraße",
-    groeße: 100,
+    groesse: 100,
     },
 
 ];

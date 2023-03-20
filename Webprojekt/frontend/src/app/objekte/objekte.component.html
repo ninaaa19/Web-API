@@ -23,13 +23,15 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        
-        <p class="card-text">{{Objekt.titel}}</p>
-        <p class="card-text"><small class="text-muted">{{Objekt.beschreibung}}</small></p>
-        <md-button routerLink="/edit/{{Objekt.titel}}"class="md-raised md-cornered">Angebot ansehen ...</md-button>
+        <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn" style="position: absolute; top: 0; right: 0;">x</button>
+        <h5 class="card-title">{{Objekt.titel}}</h5>
+        <p class="card-text">{{Objekt.beschreibung}}</p>
+        <p class="card-text"><small class="text-muted">{{Objekt.adresse}}</small></p>
+        <p class="card-text"><small class="text-muted">{{Objekt.groesse}} Quadratmeter</small></p>
+        <md-button routerLink="/edit/{{Objekt.titel}}"class="md-raised md-cornered">Angebot anzeigen</md-button>
         <br>
 
-        <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn">x</button>
+        
 
       </div>
     </div>
