@@ -22,6 +22,9 @@ export class ObjekteComponent implements OnInit {
 
   deleteObjekt(objekt: Objekt) : void {
     this.objektService.deleteObjekt(objekt).subscribe(); 
-    this.objekte = this.objekte.filter(o => o == objekt);
+    this.objekte = this.objekte.filter(obj => obj.id !== objekt.id);
   }
+
+
+  
 }

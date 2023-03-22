@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core';
+import { Objekt } from './objekt';
+import { ObjektService } from './objekt.service';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { 
 
   }
+  
+  objekte : Objekt[] = [];
 
   title = 'Objekte';
 
@@ -21,7 +26,13 @@ export class AppComponent implements OnInit {
       return result;
     })
   }
-
+  suche(adresse: string): void {
+    this.objekte = this.objekte.filter(obj => obj.adresse !== adresse);
+    
+  }
+  
+ 
+  
 
 }
 @Pipe({
