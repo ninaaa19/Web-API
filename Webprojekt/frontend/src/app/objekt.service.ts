@@ -42,5 +42,9 @@ export class ObjektService {
     var response = this.httpClient.post<any>(this.ObjekteUrl + "/upload-image", {id: id, file: file, fileType: file.type});
     return response;
   }
+  suche(objekt: Objekt) : Observable<Objekt> {
+    var response = this.httpClient.get<Objekt>(this.ObjekteUrl + "/objektesuchen");
+    return response;
+  }
 
 }

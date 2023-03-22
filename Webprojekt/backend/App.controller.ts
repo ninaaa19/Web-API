@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 //import multer from 'multer'; 
 import { post } from 'request';
+import { platform } from 'os';
 
 export class AppController {
   public static objekte = [
@@ -11,7 +12,9 @@ export class AppController {
       'typ': 'Wohnung',
       'titel': 'Wohnung im modern Design',
       'beschreibung': 'Mobilierte Wohnung mit hochwertigen Designmöbeln, zentrale Lage in der Innenstadt, sehr Preiswert',
-      'adresse': 'Tulpenweg 23, 73443 Heidenheim',
+      'adresse': 'Tulpenweg 23',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 0,
       'bild': '1.jpg'
@@ -21,7 +24,9 @@ export class AppController {
       'typ': 'Haus',
       'titel': 'Haus mit Garten',
       'beschreibung': 'Einfamilienhaus in ruhiger Lage am Stadtrand mit großem Garten, Garage mit zwei Stellplätzen, Gartenhaus für Gartengeräte, Hochbeet vorhanden',
-      'adresse': 'Musterstraße',
+      'adresse': 'Musterstraße 8',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 600,
       'anzahlinteressent': 10,
       'bild': '2.jpg'
@@ -31,7 +36,9 @@ export class AppController {
       'typ': 'Bauplatz',
       'titel': 'Bauplatz',
       'beschreibung': 'Bauplatz am Stadtrand im Neubaugebiet Hochfeld, Baugebiet mit Blick über die Stadt Heidenheim',
-      'adresse': 'Baulandstraße 4, 73460 Heidenheim',
+      'adresse': 'Baulandstraße 4 ',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 700,
       'anzahlinteressent': 3,
       'bild': ''
@@ -41,7 +48,9 @@ export class AppController {
       'typ': 'Wohnung',
       'titel': 'Wohnung mit Stadtblick',
       'beschreibung': 'Wohnung mit Ausblick über die Stadt Heidenheim, schlichtes modernes Design, voll möbiliert mit Einbauküche',
-      'adresse': 'Marienstraße 64, 73503 Heidenheim',
+      'adresse': 'Marienstraße 64',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 500,
       'anzahlinteressent': 2,
       'bild': '4.jpg'
@@ -51,7 +60,9 @@ export class AppController {
       'typ': 'Wohnung',
       'titel': 'Wohnung im Zentrum',
       'beschreibung': 'Wohnung teilweise möbiliert mit großer Wohnfläche, 3 Zimmer, preiswertes Angebot',
-      'adresse': 'Danzigerstraße 54, 75689 Heidenheim',
+      'adresse': 'Danzigerstraße 54',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 7,
       'bild': '5.jpg'
@@ -61,7 +72,9 @@ export class AppController {
       'typ': 'Haus',
       'titel': 'Doppelhaushälfte in ruhiger Lage',
       'beschreibung': 'Doppelhaushälfte mit Terasse und Garten, Penthousebalkon, drei Schlafzimmer, zwei Bäder, Wohn- und Essbereich sowie Stellplatz vor dem Haus',
-      'adresse': 'Memelstraße 1, 73450 Heidenheim',
+      'adresse': 'Memelstraße 1',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 1,
       'bild': '6.jpg'
@@ -71,7 +84,9 @@ export class AppController {
       'typ': 'Haus',
       'titel': 'Haus im Holzbaustiel',
       'beschreibung': 'Zentrale Lage zur Innenstadt, großer Garten, zwei Stellplätze vor dem Haus, Wohn- und Essbereich, Gäste WC, vier Schlafzimmer und zwei Bäder',
-      'adresse': 'Wischauerstraße 6, 73589 Heidenheim',
+      'adresse': 'Wischauerstraße 6',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 0,
       'bild': '7.jpg'
@@ -81,7 +96,9 @@ export class AppController {
       'typ': 'Haus',
       'titel': 'Einfamilienhaus mit Garage',
       'beschreibung': 'Ruhige Lage im Stadtrandgebiet, Garage mit einem Stelplatz und zusätzlichem Stellplatz vor dem Haus, kleiner Garten mit Terasse',
-      'adresse': 'Musterstraße',
+      'adresse': 'Musterstraße 7',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 4,
       'bild': ''
@@ -91,7 +108,9 @@ export class AppController {
       'typ': 'Bauplatz',
       'titel': 'Bauplatz im Neubaugebiet',
       'beschreibung': 'Bauplatz für ein Einfamilienhaus',
-      'adresse': 'Fünfkirchnerstraße 4, 67432 Heidenheim',
+      'adresse': 'Fünfkirchnerstraße 4',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 2,
       'bild': ''
@@ -101,14 +120,16 @@ export class AppController {
       'typ': 'Bauplatz',
       'titel': 'Bauplatz für ein kleines Haus',
       'beschreibung': 'Bauplatz im Altbaugebiet Wasserstall',
-      'adresse': 'Kurlandstraße 5, 84623 Heidenheim',
+      'adresse': 'Kurlandstraße 5',
+      'plz':73443,
+      'ort':'Heidenheim',
       'groesse': 50,
       'anzahlinteressent': 7,
       'bild': ''
     }
   ];
 
-  /*
+  
   public static objekteextern = [
     {
       "createdOn": 1667400075, 
@@ -153,7 +174,7 @@ export class AppController {
           "shortHand": "Bauplatz BP-2022-01" }
           }
     ];
-  */
+  
 
   static async test() {
     return this.objekte;
@@ -162,23 +183,8 @@ export class AppController {
   static async objekt() {
     return this.objekte;
   }
-  /*
-  static async postobjektextern(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string, type: string, comment: string, shortHand: string, address: string, postal: number, city: string, size: number) {
-   
-    typ = type;
-    titel = shortHand;
-    beschreibung = comment;
-    adresse = address, postal, city;
-    groesse = size;
-
-    // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
-    this.objekte.push({id: id, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } );
-    return {id: id, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild };
-  }*/
-
   
-  static async postobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
-    // Finde die höchste existierende ID, indem du die Liste der Objekte durchgehst
+  static async postobjektextern(type: string, comment: string, shortHand: string, address: string, postal: number, city: string, size: number) {
     let highestId = 0;
     for (const obj of this.objekte) {
       if (obj.id > highestId) {
@@ -188,11 +194,28 @@ export class AppController {
     // Erhöhe die höchste ID um eins und verwende sie als ID für das neue Objekt
     const newId = highestId + 1;
     // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
-    this.objekte.push({id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } );
-    return {id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild };
+    this.objekte.push({id: newId, typ: type, titel: shortHand, beschreibung: comment, adresse: address, plz:postal, ort:city, groesse: size, anzahlinteressent: 0, bild: '' } );
+    return {id: newId, typ: type, titel: shortHand, beschreibung: comment, adresse:address, plz:postal, ort:city, groesse: size, anzahlinteressent: 0, bild: '' };
   }
 
-  static async putobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
+  
+  static async postobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string,  plz:number, ort:string, postal: number, city: string, groesse: number, anzahlinteressent: number, bild: string) {
+    // Finde die höchste existierende ID, indem du die Liste der Objekte durchgehst
+    //In Seperate Funktion auslagern:
+    let highestId = 0;
+    for (const obj of this.objekte) {
+      if (obj.id > highestId) {
+        highestId = obj.id;
+      }
+    }
+    // Erhöhe die höchste ID um eins und verwende sie als ID für das neue Objekt
+    const newId = highestId + 1;
+    // Füge das neue Objekt zur Liste der Objekte hinzu und gib die aktualisierte Liste zurück
+    this.objekte.push({id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, plz: plz, ort: ort, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild } );
+    return {id: newId, typ: typ, titel: titel, beschreibung: beschreibung, adresse: adresse, plz: plz, ort: ort, groesse: groesse, anzahlinteressent: anzahlinteressent, bild: bild };
+  }
+
+  static async putobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, plz:number, ort:string, groesse: number, anzahlinteressent: number, bild: string) {
     //Objekt mit der entsprechenden id suchen
     const objektIndex = this.objekte.findIndex((objekt) => objekt.id === id);
 
@@ -211,7 +234,7 @@ export class AppController {
 
   }
 
-  static async deleteobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number, anzahlinteressent: number, bild: string) {
+  static async deleteobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, plz:number, ort:string, groesse: number, anzahlinteressent: number, bild: string) {
     const indexToDelete = this.objekte.findIndex(objekt => objekt.id === id);
     if (indexToDelete === -1) {
       return console.log('Das Objekt konnte nicht gelöscht werden'); // Wenn das Objekt nicht in der Liste ist, wird false zurückgegeben
@@ -237,7 +260,7 @@ export class AppController {
     return filteredObjekte;
   }
 
-  static async sucheobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number)  {
+  static async sucheobjekt(id: number, typ: string, titel: string, beschreibung: string, adresse: string, plz:number, ort:string, groesse: number)  {
    try {
         const posts = this.objekte.filter(post => post.adresse === adresse);
       return posts;
@@ -247,7 +270,7 @@ export class AppController {
     }
   }
 
-  static async sucheID(id: number, typ: string, titel: string, beschreibung: string, adresse: string, groesse: number)  {
+  static async sucheID(id: number, typ: string, titel: string, beschreibung: string, adresse: string, plz:number, ort:string, groesse: number)  {
     try {
          const posts = this.objekte.filter(post => post.id === id);
        return posts;

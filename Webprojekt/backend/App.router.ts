@@ -12,7 +12,7 @@ router.put('/objekte',AppMiddleware.putobjekt);
 
 router.post('/objekte',AppMiddleware.postobjekt);
 
-//router.post('/objektextern',AppMiddleware.postobjektextern);
+router.post('/objektextern',AppMiddleware.postobjektextern);
 
 router.delete('/objekte',AppMiddleware.deleteobjekt);
 

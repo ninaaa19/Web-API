@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NgModule } from '@angular/core';
 
+
 @Component({
   selector: 'app-create-objekt',
   templateUrl: './create-objekt.component.html',
@@ -22,12 +23,16 @@ export class CreateObjektComponent implements OnInit {
     private activatedRoute: ActivatedRoute, 
     private ObjektService: ObjektService) { }
 
-  objekte : Objekt =  {
-    id: 5,
-    titel: "Wohnung",
-    beschreibung: "Beispieltext für eine Wohnung",
-    adresse: "Musterstraße",
+    
+   objekte : Objekt =  {
+    id: 2,
+    titel: "",
+    beschreibung: "",
+    adresse: "",
+    plz: 3,
+    ort: "",
     groesse: 50,
+  
     }
 
   bild: any;

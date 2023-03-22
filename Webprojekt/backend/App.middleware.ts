@@ -24,7 +24,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
 
     static async putobjekt(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.putobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse, req.body.anzahlinteressent, req.body.bild)));
+            return res.status(200).end(JSON.stringify(await AppController.putobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.plz, req.body.ort, req.body.groesse, req.body.anzahlinteressent, req.body.bild)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
@@ -34,26 +34,26 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
     static async postobjekt(req: express.Request, res: express.Response): Promise<void> {
         console.log('postobjekt');
         try{
-            return res.status(200).end(JSON.stringify(await AppController.postobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse, req.body.anzahlinteressent, req.body.bild)));
+            return res.status(200).end(JSON.stringify(await AppController.postobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.plz, req.body.ort, req.body.groesse, req.body.anzahlinteressent, req.body.bild, req.body.postal, req.body.city)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
         }
     }
-/*
+
     static async postobjektextern(req: express.Request, res: express.Response): Promise<void> {
         console.log('postobjekt');
         try{
-            return res.status(200).end(JSON.stringify(await AppController.postobjektextern(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse, req.body.anzahlinteressent, req.body.bild, req.body.type, req.body.address, req.body.postal, req.body.city, req.body.size, req.body.comment, req.body.shortHand)));
+            return res.status(200).end(JSON.stringify(await AppController.postobjektextern(req.body.entry.type, req.body.entry.address, req.body.entry.postal, req.body.entry.city, req.body.entry.size, req.body.entry.comment, req.body.entry.shortHand)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
         }
     }
-*/
+    
     static async deleteobjekt(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.deleteobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse, req.body.anzahlinteressent, req.body.bild)));
+            return res.status(200).end(JSON.stringify(await AppController.deleteobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.plz, req.body.ort, req.body.groesse, req.body.anzahlinteressent, req.body.bild)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
@@ -62,7 +62,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
 
     static async sucheobjekt(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.sucheobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse)));
+            return res.status(200).end(JSON.stringify(await AppController.sucheobjekt(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.plz, req.body.ort, req.body.groesse)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
@@ -70,7 +70,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
     }
     static async sucheID(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.sucheID(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse)));
+            return res.status(200).end(JSON.stringify(await AppController.sucheID(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.plz, req.body.ort, req.body.groesse)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
