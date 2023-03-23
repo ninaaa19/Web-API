@@ -132,46 +132,46 @@ export class AppController {
   
   public static objekteextern = [
     {
-      "createdOn": 1667400075, 
-      "createdBy": "Max Musterman", 
-      "softwareVersion": "2022-1.3.2", 
-      "customer": "Gut & Unbezahlbar GmbH", 
-      "entry": {
-      "type": "house",
-      "address": "Beispielstraße 56",
-      "postal": 89522,
-      "city": "Heidenheim an der Brenz",
-      "size": 246,
-      "comment": "Ruhige Lage, mitten im Zentrum", 
-      "shortHand": "Objekt AB-246"
+      'createdOn': 1667400075, 
+      'createdBy': 'Max Musterman', 
+      'softwareVersion': '2022-1.3.2', 
+      'customer': 'Gut & Unbezahlbar GmbH', 
+      'entry': {
+      'type': 'house',
+      'address': 'Beispielstraße 56',
+      'postal': 89522,
+      'city': 'Heidenheim an der Brenz',
+      'size': 246,
+      'comment': 'Ruhige Lage, mitten im Zentrum', 
+      'shortHand': 'Objekt AB-246'
       } },
       {
-        "createdOn": 1667400075, 
-        "createdBy": "Frieda Fröhlich", 
-        "softwareVersion": "3.4.2.6", 
-        "customer": "Studentenbuden AG", 
-        "entry": {
-        "type": "apartment",
-        "address": "Am bekannten Platz 28",
-        "postal": 89522,
-        "city": "Heidenheim an der Brenz",
-        "size": 34,
-        "comment": "Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert", 
-        "shortHand": "Studenten Wohnung am bekannten Platz 28"
+        'createdOn': 1667400075, 
+        'createdBy': 'Frieda Fröhlich', 
+        'softwareVersion': '3.4.2.6', 
+        'customer': 'Studentenbuden AG', 
+        'entry': {
+        'type': 'apartment',
+        'address': 'Am bekannten Platz 28',
+        'postal': 89522,
+        'city': 'Heidenheim an der Brenz',
+        'size': 34,
+        'comment': 'Kleine Wohnung für Studenten, Möbiliert, Gute lage, Preiswert', 
+        'shortHand': 'Studenten Wohnung am bekannten Platz 28'
         } },
         {
-          "createdOn": 1667400075, 
-          "createdBy": "Manfred Stein", 
-          "softwareVersion": null, 
-          "customer": "Stein Bauexperte GmbH", 
-          "entry": {
-          "type": "construction-site", 
-          "address": "Straße am Fluss 1", 
-          "postal": 89522,
-          "city": "Heidenheim an der Brenz", 
-          "size": 600,
-          "comment": "Neues Baugebiet, Platz für Wohnungen oder Einfamilienhäuser, Fertigstellung 2076, Preis 750.000",
-          "shortHand": "Bauplatz BP-2022-01" }
+          'createdOn': 1667400075, 
+          'createdBy': 'Manfred Stein', 
+          'softwareVersion': null, 
+          'customer': 'Stein Bauexperte GmbH', 
+          'entry': {
+          'type': 'construction-site', 
+          'address': 'Straße am Fluss 1', 
+          'postal': 89522,
+          'city': 'Heidenheim an der Brenz', 
+          'size': 600,
+          'comment': 'Neues Baugebiet, Platz für Wohnungen oder Einfamilienhäuser, Fertigstellung 2076, Preis 750.000',
+          'shortHand': 'Bauplatz BP-2022-01' }
           }
     ];
   
@@ -245,18 +245,18 @@ export class AppController {
 
 
   static async filterhaus(id: number, typ: string) {
-    const filteredObjekte = this.objekte.filter(obj => obj.typ === "Haus");
+    const filteredObjekte = this.objekte.filter(obj => obj.typ === 'Haus');
     return filteredObjekte;
     }
 
 
   static async filterwohnung(id: number, typ: string) {
-    const filteredObjekte = this.objekte.filter(obj => obj.typ === "Wohnung");
+    const filteredObjekte = this.objekte.filter(obj => obj.typ === 'Wohnung');
     return filteredObjekte;
   }
 
   static async filterbauplatz(id: number, typ: string) {
-    const filteredObjekte = this.objekte.filter(obj => obj.typ === "Bauplatz");
+    const filteredObjekte = this.objekte.filter(obj => obj.typ === 'Bauplatz');
     return filteredObjekte;
   }
 

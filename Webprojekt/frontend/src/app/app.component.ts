@@ -30,9 +30,6 @@ export class AppComponent implements OnInit {
     this.objekte = this.objekte.filter(obj => obj.adresse !== adresse);
     
   }
-  
- 
-  
 
 }
 @Pipe({
