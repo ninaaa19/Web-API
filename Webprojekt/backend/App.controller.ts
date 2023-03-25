@@ -239,6 +239,11 @@ export class AppController {
     if (indexToDelete === -1) {
       return console.log('Das Objekt konnte nicht gelöscht werden'); // Wenn das Objekt nicht in der Liste ist, wird false zurückgegeben
     }
+    /*Aufgabe 3
+    if (anzahlinteressent >= 3) {
+      return console.log('Das Objekt kann nicht gelöscht werden, da mehr als 3 Interessenten vorhanden sind');
+      }
+      */
     this.objekte.splice(indexToDelete, 1); // Entfernt das Objekt an der gefundenen Index-Position aus der Liste
     return console.log('Das Objekt wurde gelöscht'); // Gibt true zurück, wenn das Objekt erfolgreich entfernt wurde
   }

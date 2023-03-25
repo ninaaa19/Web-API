@@ -11,9 +11,11 @@
             <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn" style="position: absolute; top: 0; right: 0;">x</button>
             <h5 class="card-title">{{Objekt.titel}}</h5>
             <p class="card-text">{{Objekt.beschreibung}}</p>
-            <p class="card-text"><small class="text-muted">{{Objekt.adresse}}, {{Objekt.plz}} {{Objekt.ort}}</small></p>
-            <p class="card-text"><small class="text-muted">{{Objekt.groesse}} Quadratmeter</small></p>
-            <md-button routerLink="/edit/{{Objekt.titel}}"class="md-raised md-cornered">Angebot anzeigen</md-button>
+            <p class="card-text"><small class="text-muted">{{Objekt.adresse}}, {{Objekt.plz}} {{Objekt.ort}}
+              <br> {{Objekt.groesse}} Quadratmeter Wohn- oder Baufläche</small></p>
+            <p class="card-text"><small class="text-muted">Interessenten: {{Objekt.anzahlinteressent}}</small></p>
+            <br>
+            <mat-button routerLink="/edit/{{Objekt.titel}}"class="btn btn-outline-secondary">Angebot anzeigen</mat-button>
             <br>
     
             
@@ -22,3 +24,4 @@
         </div>
       </div>
     </div>
+    
