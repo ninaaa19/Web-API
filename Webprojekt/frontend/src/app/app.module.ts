@@ -9,12 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { WohnungenComponent } from './wohnungen/wohnungen.component';
 import { HauserComponent } from './hauser/hauser.component';
 import { BauplaetzeComponent } from './bauplaetze/bauplaetze.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+
     
-    //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
