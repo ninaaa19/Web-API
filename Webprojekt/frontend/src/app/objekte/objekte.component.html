@@ -8,14 +8,22 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn" style="position: absolute; top: 0; right: 0;">x</button>
+        <button (click)="deleteObjekt(Objekt)" class="btn btn-outline-secondary" style="position: absolute; top: 0; right: 0;">x</button>
         <h5 class="card-title">{{Objekt.titel}}</h5>
         <p class="card-text">{{Objekt.beschreibung}}</p>
         <p class="card-text"><small class="text-muted">{{Objekt.adresse}}, {{Objekt.plz}} {{Objekt.ort}}
           <br> {{Objekt.groesse}} Quadratmeter Wohn- oder Baufläche</small></p>
         <p class="card-text"><small class="text-muted">Interessenten: {{Objekt.anzahlinteressent}}</small></p>
         <br>
+        <div class="row">
+        <div class="col">
         <mat-button routerLink="/edit/{{Objekt.titel}}"class="btn btn-outline-secondary">Angebot anzeigen</mat-button>
+        </div>
+        <div class="col">
+        <button                                                    class="btn btn-outline-secondary" style="position: absolute;">Angebot merken</button>
+             <!--(click)="erhoeheAnzahlI(Objekt.anzahlinteressent"-->
+      </div>
+        </div>
         <br>
 
         

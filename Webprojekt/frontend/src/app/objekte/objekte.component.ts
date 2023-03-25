@@ -29,10 +29,15 @@ export class ObjekteComponent implements OnInit {
       
       return;
     }
-    // Wenn die Interessentenanzahl nicht 3 ist, lösche das Objekt wie gewohnt
+    // Wenn die Interessentenanzahl nicht 3 ist, lösche das Objekt
     this.objektService.deleteObjekt(objekt).subscribe(); 
     this.objekte = this.objekte.filter(obj => obj.id !== objekt.id);
   }
+
   
+    erhoeheAnzahlI(objekt: Objekt): void {
+     //this.objektService.erhöheAnzahlI().subscribe();
+     this.objekte = this.objekte.filter(obj => obj.id !== objekt.id);
+   }
   
 }

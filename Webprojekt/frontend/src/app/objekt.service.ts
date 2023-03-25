@@ -3,6 +3,7 @@ import { Objekte } from './mock-objekt';
 import { Objekt } from './objekt';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { identifierName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -60,4 +61,8 @@ export class ObjektService {
     return response;
   }
 
+  erhöheAnzahlI(id: number, anzahlinteressent: number) : Observable<Objekt> {
+    var response = this.httpClient.put<Objekt>(this.ObjekteUrl + "/objekteAnzahlerhoehen",  {id: id, anzahlinteressent:anzahlinteressent});
+    return response;
+  }
 }
