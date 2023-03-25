@@ -10,6 +10,7 @@ export const Objekte: Objekt[] = [
     plz: 3,
     ort: "",
     groesse: 50,
+    anzahlinteressent: 0,
     
     },
 
@@ -22,6 +23,7 @@ export const Objekte: Objekt[] = [
     plz: 3,
     ort: "",
     groesse: 600,
+    anzahlinteressent: 0,
     },  
 
     {
@@ -33,6 +35,7 @@ export const Objekte: Objekt[] = [
     plz: 3,
     ort: "",
     groesse: 700,
+    anzahlinteressent: 0,
     },
 
     {
@@ -44,6 +47,7 @@ export const Objekte: Objekt[] = [
     plz: 3,
     ort: "",
     groesse: 100,
+    anzahlinteressent: 0,
     },
 
 ];

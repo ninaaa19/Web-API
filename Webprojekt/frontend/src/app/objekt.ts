@@ -6,5 +6,6 @@ export interface Objekt{
     adresse: string,
     plz:number,
     ort: string,
-    groesse: number
+    groesse: number,
+    anzahlinteressent: 0,
 }

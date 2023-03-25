@@ -33,7 +33,7 @@ export class CreateObjektComponent implements OnInit {
     plz: 3,
     ort: "",
     groesse: 50,
-  
+    anzahlinteressent: 0
     }
 
   bild: any;

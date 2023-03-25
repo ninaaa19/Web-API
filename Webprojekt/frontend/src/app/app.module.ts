@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { WohnungenComponent } from './wohnungen/wohnungen.component';
 import { HauserComponent } from './hauser/hauser.component';
 import { BauplaetzeComponent } from './bauplaetze/bauplaetze.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -21,13 +23,15 @@ import { BauplaetzeComponent } from './bauplaetze/bauplaetze.component';
     CreateObjektComponent,
     WohnungenComponent,
     HauserComponent,
-    BauplaetzeComponent
+    BauplaetzeComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     
     //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
   ],

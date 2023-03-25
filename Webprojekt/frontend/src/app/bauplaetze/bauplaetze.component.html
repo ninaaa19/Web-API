@@ -1,6 +1,24 @@
-
-<div class="container pt-4">
-    <div class="h-100 p-4 bg-light border rounded-3 text-left">
-    <div class="display-6">Bauplätze</div>
-  </div>
-  <br>
+<div class="list-group" *ngFor="let Objekt of objekte">
+    <div class="card mb-5" style="max-width: 1500px; height: 300px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          
+            <img src="http://localhost:3000/images/{{Objekt.id}}.jpg"class="img-fluid rounded-start" alt="...">
+          
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn" style="position: absolute; top: 0; right: 0;">x</button>
+            <h5 class="card-title">{{Objekt.titel}}</h5>
+            <p class="card-text">{{Objekt.beschreibung}}</p>
+            <p class="card-text"><small class="text-muted">{{Objekt.adresse}}, {{Objekt.plz}} {{Objekt.ort}}</small></p>
+            <p class="card-text"><small class="text-muted">{{Objekt.groesse}} Quadratmeter</small></p>
+            <md-button routerLink="/edit/{{Objekt.titel}}"class="md-raised md-cornered">Angebot anzeigen</md-button>
+            <br>
+    
+            
+    
+          </div>
+        </div>
+      </div>
+    </div>
