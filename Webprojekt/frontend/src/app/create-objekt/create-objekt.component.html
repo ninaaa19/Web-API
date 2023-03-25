@@ -1,21 +1,29 @@
-<div class="card">
-
-    <div class="card-header">
-        <h5>Neue Wohnung, Bauplatz oder Haus hinzufügen</h5>
-    </div>
-
+<div class="card mb-3">
+   
     <div class="card-body">
+        <h5 class="card-title">Neue Wohnung, Bauplatz oder Haus hinzufügen</h5>
         <form>
-            <label class="form-label">Bild</label>
+            <div class="col">
+            <label class="form-label">Objektart</label>
+            <select id="inputTitel" [(ngModel)] ="objekte.typ" name="Typ" class="form-control"> 
+                <option selected>bitte wählen...</option>
+                <option>Haus</option>
+                <option>Wohnung</option>
+                <option>Bauplatz</option>
+              </select>
+            </div>
+            <div class="col">
+            <label class="form-label">Bild ändern oder hinzufügen:</label>
+            <!--<img src="http://localhost:3000/images/{{Objekt.id}}.jpg"class="img-fluid rounded-start" alt="...">-->
             <input type="file" (change)="onFileChange($event)" [(ngModel)] ="bild" name="Bild" class="form-control"/>
+            </div>
+            
             <div class="row mb-2">
                 <div class="col">
-          
                  <label class="form-label">ID</label>
                     <input type="number" [(ngModel)] ="objekte.id" name="ID" class="form-control"/>
                 </div>
             <div class="col">
-               
                 <label class="form-label">Titel</label>
                 <input type="text" [(ngModel)] ="objekte.titel" name="Titel" class="form-control"/>
             </div>
@@ -23,37 +31,40 @@
         
             <div class="row mb-2">
                 <div class="col">
-            
                 <label class="form-label">Beschreibung</label>
-                
                 <input type="text" [(ngModel)] ="objekte.beschreibung" name="Beschreibung" class="form-control"/>
-                
                 </div>
             </div>
         
             <div class="row mb-2">
                 <div class="col">
-               
-                <label class="form-label">Adresse</label>
-                
-                <input type="text" [(ngModel)] ="objekte.adresse" name="Adresse" class="form-control"/>
-                 
+
+                    <label class="form-label">Straße und Hausnummmer</label>
+                    <input type="text" [(ngModel)] ="objekte.adresse" name="Adresse" class="form-control"/>
                 </div>
-        
                 <div class="col">
-           
-                <label class="form-label">Größe in Quadratmeter</label>
-                
-                <input type="number" [(ngModel)] ="objekte.groesse" name="Größe" class="form-control"/>
-               
+                    <label class="form-label">Postleitzahl</label>
+                    <input type="text" [(ngModel)] ="objekte.plz" name="Adresse" class="form-control"/>
+                </div>
+                <div class="col">
+                    <label class="form-label">Ort</label>
+                    <input type="text" [(ngModel)] ="objekte.ort" name="Adresse" class="form-control"/>
                 </div>
             </div>
-        
+            
+            <div class="row mb-2">
+                <div class="col">
+                    <label class="form-label">Größe in Quadratmeter</label>
+                    <input type="number" [(ngModel)] ="objekte.groesse" name="Größe" class="form-control"/>
+                </div>
+            </div>
+
         </form>
     </div>  
 
     <div class="card-footer">
         <button (click)="save()" class="btn btn-primary">Submit</button>
-    </div> 
-</div>
+    </div>
+
+
 

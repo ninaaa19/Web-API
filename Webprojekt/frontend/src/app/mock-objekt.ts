@@ -3,6 +3,7 @@ import { Objekt} from "./objekt";
 export const Objekte: Objekt[] = [
     {
     id: 1,    
+    typ: "",
     titel: "Wohnung",
     beschreibung: "Beispieltext für eine Wohnung",
     adresse: "Musterstraße",
@@ -14,6 +15,7 @@ export const Objekte: Objekt[] = [
 
     {
     id: 2,
+    typ: "",
     titel: "Haus mit Garten",
     beschreibung: "Beispieltext für ein Haus",
     adresse: "Musterstraße",
@@ -24,6 +26,7 @@ export const Objekte: Objekt[] = [
 
     {
     id: 3,
+    typ: "",
     titel: "Bauplatz",
     beschreibung: "Beispieltext für einen Bauplatz",
     adresse: "Musterstraße",
@@ -34,6 +37,7 @@ export const Objekte: Objekt[] = [
 
     {
     id: 4,
+    typ: "",
     titel: "Wohnung mit Stadtblick",
     beschreibung: "Beispieltext für eine Wohnung",
     adresse: "Musterstraße",

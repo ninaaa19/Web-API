@@ -14,9 +14,22 @@ export class ObjektService {
   ObjekteUrl :string = "http://localhost:3000/api/app";
 
   getObjekte() : Observable<Objekt[]>{
-    
     var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/objekte");
+    return response;
+  }
+  
+  getWohnungen() : Observable<Objekt[]>{
+    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/wohnungfiltern");
+    return response;
+  }
 
+  getHauser() : Observable<Objekt[]>{
+    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/hausfiltern");
+    return response;
+  }
+
+  getBauplaetze() : Observable<Objekt[]>{
+    var response = this.httpClient.get<Objekt[]>(this.ObjekteUrl + "/bauplatzfiltern");
     return response;
   }
 

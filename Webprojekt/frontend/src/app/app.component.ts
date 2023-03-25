@@ -4,6 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Objekt } from './objekt';
 import { ObjektService } from './objekt.service';
 import { registerLocaleData } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
 
 @Component({
   selector: 'app-root',

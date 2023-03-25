@@ -26,6 +26,7 @@ export class CreateObjektComponent implements OnInit {
     
    objekte : Objekt =  {
     id: 2,
+    typ: "",
     titel: "",
     beschreibung: "",
     adresse: "",
