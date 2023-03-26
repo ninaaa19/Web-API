@@ -1,6 +1,5 @@
 import express from 'express';
 import { AppController } from './App.controller';
-//import multer from 'multer';
 export class AppMiddleware {
 
 

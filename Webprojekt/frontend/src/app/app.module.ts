@@ -18,16 +18,12 @@ import { BauplaetzeComponent } from './bauplaetze/bauplaetze.component';
     WohnungenComponent,
     HauserComponent,
     BauplaetzeComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]

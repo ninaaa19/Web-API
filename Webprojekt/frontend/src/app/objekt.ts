@@ -1,6 +1,6 @@
 export interface Objekt{
     id: number,
-    typ: "",
+    typ: string,
     titel: string,
     beschreibung: string,
     adresse: string,

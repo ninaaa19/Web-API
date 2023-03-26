@@ -7,8 +7,6 @@ import { WohnungenComponent } from './wohnungen/wohnungen.component';
 import { HauserComponent } from './hauser/hauser.component';
 import { BauplaetzeComponent } from './bauplaetze/bauplaetze.component';
 
-
-
 const routes: Routes = [
   {
     path:'objekte', component: ObjekteComponent

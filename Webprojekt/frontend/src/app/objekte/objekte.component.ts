@@ -3,8 +3,6 @@ import { Objekt } from '../objekt';
 import { ObjektService } from '../objekt.service';
 import { MatDialog } from '@angular/material/dialog';
 
-
-
 @Component({
   selector: 'app-objekte',
   templateUrl: './objekte.component.html',
@@ -29,7 +27,6 @@ export class ObjekteComponent implements OnInit {
     //Aufgabe 3
     if (objekt.anzahlinteressent >= 3) {
       // Wenn die Interessentenanzahl 3 ist, beende die Methode
-      
       return;
     }
     // Wenn die Interessentenanzahl nicht 3 ist, lösche das Objekt
@@ -49,6 +46,5 @@ export class ObjekteComponent implements OnInit {
     console.log(this.adresse);
     this.objekte = this.objektekopie;
     this.objekte = this.objekte.filter(obj => obj.adresse.includes(this.adresse));
-    
   }
 }

@@ -26,7 +26,6 @@ export class WohnungenComponent implements OnInit{
     //Aufgabe 3
     if (objekt.anzahlinteressent >= 3) {
       // Wenn die Interessentenanzahl 3 ist, beende die Methode
-      
       return;
     }
     // Wenn die Interessentenanzahl nicht 3 ist, lösche das Objekt wie gewohnt
@@ -45,6 +44,5 @@ export class WohnungenComponent implements OnInit{
    console.log(this.adresse);
    this.objekte = this.objektekopie;
    this.objekte = this.objekte.filter(obj => obj.adresse.includes(this.adresse));
-   
  }
 }
