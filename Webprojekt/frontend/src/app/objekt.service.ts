@@ -41,7 +41,7 @@ export class ObjektService {
   }
 
   getObjektById(id : number) : Observable<Objekt> {
-    var response = this.httpClient.get<Objekt>(this.ObjekteUrl + "/IDsuchen" + id);
+    var response = this.httpClient.get<Objekt>(this.ObjekteUrl + "/IDsuchen/" + id);
 
     var objektById = Objekte.find(x => x.id == id)!;
     return response;
@@ -61,8 +61,8 @@ export class ObjektService {
     return response;
   }
 
-  erhöheAnzahlI(id: number, anzahlinteressent: number) : Observable<Objekt> {
-    var response = this.httpClient.put<Objekt>(this.ObjekteUrl + "/objekteAnzahlerhoehen",  {id: id, anzahlinteressent:anzahlinteressent});
+  erhöheAnzahlI(id: number) : Observable<Objekt> {
+    var response = this.httpClient.put<Objekt>(this.ObjekteUrl + "/objekteAnzahlerhoehen/" + id , {});
     return response;
   }
 }

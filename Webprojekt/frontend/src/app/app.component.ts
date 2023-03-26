@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   }
   
   objekte : Objekt[] = [];
-
+  adresse = '';
   title = 'Objekte';
 
   Logo:string = 'assets/images/Logo.jpg';
@@ -27,8 +27,9 @@ export class AppComponent implements OnInit {
       return result;
     })
   }
-  suche(adresse: string): void {
-    this.objekte = this.objekte.filter(obj => obj.adresse !== adresse);
+  suche(): void {
+    console.log(this.adresse);
+    this.objekte = this.objekte.filter(obj => obj.adresse.includes(this.adresse));
     
   }
 

@@ -70,7 +70,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
     }
     static async sucheID(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.sucheID(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.plz, req.body.ort, req.body.groesse)));
+            return res.status(200).end(JSON.stringify(await AppController.sucheID(parseInt(req.params.id))));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
@@ -105,7 +105,7 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
 
     static async ehrhöheAnzahlI(req: express.Request, res: express.Response): Promise<void> {
         try{
-            return res.status(200).end(JSON.stringify(await AppController.ehrhöheAnzahlI(req.body.id, req.body.anzahlinteressent)));
+            return res.status(200).end(JSON.stringify(await AppController.ehrhöheAnzahlI((parseInt(req.params.id)), req.body.anzahlinteressent)));
         } catch(err) {
             console.error('test err', err);
             return res.status(500).end();
@@ -119,24 +119,6 @@ static async test(req: express.Request, res: express.Response): Promise<void> {
             console.error('test err', err);
             return res.status(500).end();
         }
-        //Speicherort für hochgeladene Bilder
-       /* const storage = multer.diskStorage({
-        destination: function (req, file, cb) {
-        cb(null, "public/images");
-        },
-        filename: function (req, file, cb) {
-        cb(null, Date.now() + "-" + file.originalname);
-        },
-        });
-        
 
-  // Funktion zum Speichern des Bildes
-  const saveImage = multer({ storage }).single("image");
-        try{
-            return res.status(200).end(JSON.stringify(await AppController.uploadImage(req.body.id, req.body.typ, req.body.titel, req.body.beschreibung, req.body.adresse, req.body.groesse, req.body.anzahlinteressent)));
-        } catch(err) {
-            console.error('test err', err);
-            return res.status(500).end();
-        }*/
     }
 }

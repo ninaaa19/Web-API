@@ -275,7 +275,7 @@ export class AppController {
     }
   }
 
-  static async sucheID(id: number, typ: string, titel: string, beschreibung: string, adresse: string, plz:number, ort:string, groesse: number)  {
+  static async sucheID(id: number)  {
     try {
          const posts = this.objekte.filter(post => post.id === id);
        return posts;

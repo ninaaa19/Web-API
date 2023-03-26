@@ -14,7 +14,7 @@
             </div>
             <div class="col">
             <label class="form-label">Bild ändern oder hinzufügen:</label>
-            <!--<img src="http://localhost:3000/images/{{Objekt.id}}.jpg"class="img-fluid rounded-start" alt="...">-->
+            <!--<img src="http://localhost:3000/images/objekte.id"class="img-fluid rounded-start" alt="...">-->
             <input type="file" (change)="onFileChange($event)" [(ngModel)] ="bild" name="Bild" class="form-control"/>
             </div>
             <div class="row mb-2">
@@ -24,7 +24,7 @@
                    </div>
                 <div class="col">
                     <label class="form-label">Interessenten</label>
-                    <input type="number" [(ngModel)] ="objekte.anzahlinteressent" name="Größe" class="form-control"/>
+                    <input type="number" [(ngModel)] ="objekte.anzahlinteressent" name="Interessenten" class="form-control"/>
                 </div>
             </div>        
             <div class="row mb-2">
@@ -48,11 +48,11 @@
                 </div>
                 <div class="col">
                     <label class="form-label">Postleitzahl</label>
-                    <input type="text" [(ngModel)] ="objekte.plz" name="Adresse" class="form-control"/>
+                    <input type="text" [(ngModel)] ="objekte.plz" name="plz" class="form-control"/>
                 </div>
                 <div class="col">
                     <label class="form-label">Ort</label>
-                    <input type="text" [(ngModel)] ="objekte.ort" name="Adresse" class="form-control"/>
+                    <input type="text" [(ngModel)] ="objekte.ort" name="Ort" class="form-control"/>
                 </div>
             </div>
             <div class="row mb-2">

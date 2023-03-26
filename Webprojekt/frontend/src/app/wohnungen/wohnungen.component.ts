@@ -13,10 +13,13 @@ export class WohnungenComponent implements OnInit{
   constructor(private objektService:ObjektService) { }
 
   objekte : Objekt[] = [];
+  adresse = '';
+  objektekopie : Objekt[] = [];
 
   ngOnInit(): void {
     this.objektService.getWohnungen().subscribe((result) => {
       this.objekte = result;
+      this.objektekopie = result;
     });
   }
   deleteObjekt(objekt: Objekt): void {
@@ -31,4 +34,17 @@ export class WohnungenComponent implements OnInit{
     this.objekte = this.objekte.filter(obj => obj.id !== objekt.id);
   }
 
+  erhoeheAnzahlI(id: number): void {
+    this.objektService.erhöheAnzahlI(id).subscribe(()=>{
+     this.objektService.getObjekte().subscribe((result) => {
+       this.objekte = result;
+     });
+    });
+  }
+  suche(): void {
+   console.log(this.adresse);
+   this.objekte = this.objektekopie;
+   this.objekte = this.objekte.filter(obj => obj.adresse.includes(this.adresse));
+   
+ }
 }

@@ -15,10 +15,13 @@ export class ObjekteComponent implements OnInit {
   constructor(private objektService:ObjektService) { }
 
   objekte : Objekt[] = [];
+  adresse = '';
+  objektekopie : Objekt[] = [];
 
   ngOnInit(): void {
     this.objektService.getObjekte().subscribe((result) => {
       this.objekte = result;
+      this.objektekopie = result;
     });
   }
  
@@ -35,9 +38,17 @@ export class ObjekteComponent implements OnInit {
   }
 
   
-    erhoeheAnzahlI(objekt: Objekt): void {
-     //this.objektService.erhöheAnzahlI().subscribe();
-     this.objekte = this.objekte.filter(obj => obj.id !== objekt.id);
+    erhoeheAnzahlI(id: number): void {
+     this.objektService.erhöheAnzahlI(id).subscribe(()=>{
+      this.objektService.getObjekte().subscribe((result) => {
+        this.objekte = result;
+      });
+     });
    }
-  
+   suche(): void {
+    console.log(this.adresse);
+    this.objekte = this.objektekopie;
+    this.objekte = this.objekte.filter(obj => obj.adresse.includes(this.adresse));
+    
+  }
 }

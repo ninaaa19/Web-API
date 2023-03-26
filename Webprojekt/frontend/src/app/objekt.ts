@@ -1,5 +1,5 @@
 export interface Objekt{
-    id?: number,
+    id: number,
     typ: "",
     titel: string,
     beschreibung: string,
@@ -7,5 +7,5 @@ export interface Objekt{
     plz:number,
     ort: string,
     groesse: number,
-    anzahlinteressent: 0,
+    anzahlinteressent: number,
 }

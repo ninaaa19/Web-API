@@ -1,27 +1,44 @@
+<div class="input-group">
+    <input type="search" [(ngModel)] ="adresse" class="form-control rounded" placeholder="Suche" aria-label="Search" />
+   <button (click)="suche()" type="button" class="btn btn-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+  </svg>
+    </button>
+  </div>
+  <br>
+
+
 <div class="list-group" *ngFor="let Objekt of objekte">
-    <div class="card mb-5" style="max-width: 1500px; height: 300px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          
-            <img src="http://localhost:3000/images/{{Objekt.id}}.jpg"class="img-fluid rounded-start" alt="...">
-          
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <button (click)="deleteObjekt(Objekt)" class="btn btn-sm btn" style="position: absolute; top: 0; right: 0;">x</button>
-            <h5 class="card-title">{{Objekt.titel}}</h5>
-            <p class="card-text">{{Objekt.beschreibung}}</p>
-            <p class="card-text"><small class="text-muted">{{Objekt.adresse}}, {{Objekt.plz}} {{Objekt.ort}}
-              <br> {{Objekt.groesse}} Quadratmeter Wohn- oder Baufläche</small></p>
-            <p class="card-text"><small class="text-muted">Interessenten: {{Objekt.anzahlinteressent}}</small></p>
-            <br>
-            <mat-button routerLink="/edit/{{Objekt.titel}}"class="btn btn-outline-secondary">Angebot anzeigen</mat-button>
-            <br>
+<div class="card mb-5" style="max-width: 1500px; height: 300px;">
+<div class="row g-0">
+  <div class="col-md-4">
     
-            
+      <img src="http://localhost:3000/images/{{Objekt.id}}.jpg"class="img-fluid rounded-start" style="max-width: 430px; height: 297px;"alt="...">
     
-          </div>
-        </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <button (click)="deleteObjekt(Objekt)" class="btn btn-outline-secondary" style="position: absolute; top: 0; right: 0;">x</button>
+      <h5 class="card-title">{{Objekt.titel}}</h5>
+      <p class="card-text">{{Objekt.beschreibung}}</p>
+      <p class="card-text"><small class="text-muted">{{Objekt.adresse}}, {{Objekt.plz}} {{Objekt.ort}}
+        <br> {{Objekt.groesse}} Quadratmeter Wohn- oder Baufläche</small></p>
+      <p class="card-text"><small class="text-muted">Interessenten: {{Objekt.anzahlinteressent}}</small></p>
+      <br>
+      <div class="row">
+      <div class="col">
+      <mat-button [routerLink]="['/edit', Objekt.id]"class="btn btn-outline-secondary">Angebot anzeigen</mat-button>
       </div>
+      <div class="col">
+      <button (click)="erhoeheAnzahlI(Objekt.id)"  class="btn btn-outline-secondary" style="position: absolute;">Angebot merken</button>
     </div>
-    
+      </div>
+      <br>
+
+      
+
+    </div>
+  </div>
+</div>
+</div>

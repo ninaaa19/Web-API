@@ -25,14 +25,14 @@ export class CreateObjektComponent implements OnInit {
 
     
    objekte : Objekt =  {
-    id: 2,
+    id: 0,
     typ: "",
     titel: "",
     beschreibung: "",
     adresse: "",
-    plz: 3,
+    plz: 0,
     ort: "",
-    groesse: 50,
+    groesse: 0,
     anzahlinteressent: 0
     }
 
@@ -42,8 +42,10 @@ export class CreateObjektComponent implements OnInit {
   ngOnInit(): void {
     if (this.router.url !='/create'){
       var id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-      this.ObjektService.getObjektById(id).subscribe((result) => {
-        this.objekte = result;
+      console.log(id);
+      this.ObjektService.getObjektById(id).subscribe((result: any ) => {
+        this.objekte = result[0];
+        console.log(result);
       });
       
     }
