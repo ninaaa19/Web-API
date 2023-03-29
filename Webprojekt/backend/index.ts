@@ -12,7 +12,6 @@ const port = 3000;
 app.use('/images',express.static('./bilder'));
 router.use(bodyParser.json({limit: '50mb'}));
 router.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
-import { Objekt }  from './library';
 
 const objekte = [];
 
